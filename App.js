@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded",function(){
   new Vue({
     el: '#app',         // the element on which the Vue app must be build on
     data: {             // the application contains some data
-      Ambient: {}       // some weather information, but we do not have any values yet
+      ambient: {
+        temperature: null,
+        sound: null,
+        light: null
+      }       // some weather information, but we do not have any values yet
     },
     mounted () {
       this.$mqtt.subscribe(topic)       // subscribe to the information topic on MQTT
@@ -22,17 +26,30 @@ document.addEventListener("DOMContentLoaded",function(){
         let json = (new TextDecoder("utf-8").decode(message))    // we need to convert (decode) the byte information to a text string
         let data = JSON.parse(json)       // parse the JSON format to an object
         this.$data.Ambient = data         // 
-        if(data.temperature) {
-          datalight.datasets[0].data.push(data.temperature)
-          datalight.labels.push('5')
-          chart.update()
-          console.log(data.temperature)
-        }else if (data.sound){
-          datasound.datasets[0].data.push(data.sound)
-          datasound.labels.push('5')
-          chart.update()
-          console.log(data.sound)
-        }
+          if(data.temperature !== undefined){
+            console.log(data)
+           this.$data.ambient.temperature = data.temperature
+           datatemperature.datasets[0].data.push(data.temperature)
+           datatemperature.labels.push('5')
+           chart.update()
+           console.log(data.temperature)
+          }
+          if(data.sound !== undefined){
+            console.log(data)
+           this.$data.ambient.sound = data.sound
+           datasound.datasets[0].data.push(data.sound)
+           datasound.labels.push('5')
+           chart.update()
+           console.log(data.sound)
+          }
+          if(data.light !== undefined){
+            console.log(data)
+           this.$data.ambient.light = data.light
+           datalight.datasets[0].data.push(data.light)
+           datalight.labels.push('5')
+           chart.update()
+           console.log(data.light)
+          }
       }
     }
   });
