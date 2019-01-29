@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
   Vue.use(VueMqtt.default, 'ws://mqtt.labict.be:1884')
 
+
   // Create a new Vue application. 
   new Vue({
     el: '#app',         // the element on which the Vue app must be build on
@@ -24,20 +25,33 @@ document.addEventListener("DOMContentLoaded",function(){
       [topic]: function(message) {        // when a message arrives on our topic
         let json = (new TextDecoder("utf-8").decode(message))    // we need to convert (decode) the byte information to a text string
         let data = JSON.parse(json)       // parse the JSON format to an object
+        this.$data.Ambient = data         // 
           if(data.temperature !== undefined){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
+           datatemperature.datasets[0].data.push(data.temperature)
+           datatemperature.labels.push('5')
+           chart.update()
+           console.log(data.temperature)
           }
           if(data.sound !== undefined){
             console.log(data)
            this.$data.ambient.sound = data.sound
+           datasound.datasets[0].data.push(data.sound)
+           datasound.labels.push('5')
+           chart.update()
+           console.log(data.sound)
           }
           if(data.light !== undefined){
             console.log(data)
            this.$data.ambient.light = data.light
+           datalight.datasets[0].data.push(data.light)
+           datalight.labels.push('5')
+           chart.update()
+           console.log(data.light)
           }
-
       }
     }
   });
 });
+
