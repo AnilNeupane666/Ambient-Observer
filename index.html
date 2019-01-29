@@ -15,6 +15,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="App.js"></script>
@@ -51,10 +52,10 @@
             <h3>Temperature</h3>
             <div class="row">
                 <div class="col s4">
-                    <h2><div class="large">{{Ambient.temperature}} °C</div></h2>
+                    <h2><div class="large" id="temprature">{{Ambient.temperature}}</div>°C</h2>
                 </div>
                 <div class="col s8" >
-                    <canvas id="charttemperature" width="400px" height="200px" ></canvas>
+                    <div id="charttemprature" style="height: 370px; width:100%;"></div>
                 </div>
             </div>
         </div>

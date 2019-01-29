@@ -3,9 +3,10 @@
 
 document.addEventListener("DOMContentLoaded",function(){
 
-  const topic = 'webtechnology/Ambient-Observer/Ambient'
+  const topic = 'pw/amb/observer/#'
 
   Vue.use(VueMqtt.default, 'ws://mqtt.labict.be:1884')
+
 
   // Create a new Vue application. 
   new Vue({
@@ -21,7 +22,19 @@ document.addEventListener("DOMContentLoaded",function(){
         let json = (new TextDecoder("utf-8").decode(message))    // we need to convert (decode) the byte information to a text string
         let data = JSON.parse(json)       // parse the JSON format to an object
         this.$data.Ambient = data         // 
+        if(data.temperature) {
+          datalight.datasets[0].data.push(data.temperature)
+          datalight.labels.push('5')
+          chart.update()
+          console.log(data.temperature)
+        }else if (data.sound){
+          datasound.datasets[0].data.push(data.sound)
+          datasound.labels.push('5')
+          chart.update()
+          console.log(data.sound)
+        }
       }
     }
   });
 });
+
