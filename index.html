@@ -46,12 +46,12 @@
                 
               </table> -->
         <!-- </div> -->
-
+    <div class="container" id="app">
         <div class="row">
             <h3>Temperature</h3>
             <div class="row">
                 <div class="col s4">
-                    <h2>23°C</h2>
+                    <h2><div class="large">{{Ambient.temperature}} °C</div></h2>
                 </div>
                 <div class="col s8" >
                     <canvas id="charttemperature" width="400px" height="200px" ></canvas>
@@ -62,7 +62,7 @@
                 <h3>Sound</h3>
                 <div class="row">
                     <div class="col s4">
-                        <h2>166</h2>
+                        <h2><div class="large">{{Ambient.sound}}</div></h2>
                     </div>
                     <div class="col s8" >
                         <canvas id="chartsound" width="400px" height="200px" ></canvas>
@@ -73,12 +73,13 @@
                     <h3>Light</h3>
                     <div class="row">
                         <div class="col s4">
-                            <h2>264 Li</h2>
+                            <h2><div class="large">{{Ambient.light}} Li</div></h2>
                         </div>
                         <div class="col s8" >
                             <canvas id="chartlight" width="400px" height="200px" ></canvas>
                         </div>
                     </div>
                 </div>
+            </div>
 </body>
 </html>
