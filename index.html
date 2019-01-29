@@ -23,7 +23,6 @@
 </head>
 <body>
         <!-- <div class="card-panel teal lighten-2"> --> 
-        <h3>Measurements of our Arduino Grove Sensors</h3><br>
         <!-- <br>
         <br>
         <table style="width:50%">
@@ -47,11 +46,12 @@
               </table> -->
         <!-- </div> -->
     <div class="container" id="app">
+            <h3>Measurements of  Arduino Grove Sensors</h3><br>
         <div class="row">
             <h3>Temperature</h3>
             <div class="row">
                 <div class="col s4">
-                    <h2><div class="large">{{Ambient.temperature}} °C</div></h2>
+                    <h2><div class="large">{{ambient.temperature}} °C</div></h2>
                 </div>
                 <div class="col s8" >
                     <canvas id="charttemperature" width="400px" height="200px" ></canvas>
@@ -62,7 +62,7 @@
                 <h3>Sound</h3>
                 <div class="row">
                     <div class="col s4">
-                        <h2><div class="large">{{Ambient.sound}}</div></h2>
+                        <h2><div class="large">{{ambient.sound}}</div></h2>
                     </div>
                     <div class="col s8" >
                         <canvas id="chartsound" width="400px" height="200px" ></canvas>
@@ -73,7 +73,7 @@
                     <h3>Light</h3>
                     <div class="row">
                         <div class="col s4">
-                            <h2><div class="large">{{Ambient.light}} Li</div></h2>
+                            <h2><div class="large">{{ambient.light}} </div></h2>
                         </div>
                         <div class="col s8" >
                             <canvas id="chartlight" width="400px" height="200px" ></canvas>
