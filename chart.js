@@ -1,12 +1,3 @@
-var datalight = {
-    labels: ["0"],
-    datasets: [{
-        label: 'aantal lux',
-        data: [0],
-        
-        borderWidth: 1
-    }]
-} 
 var datasound = {
     labels: ["0"],
     datasets: [{
@@ -16,6 +7,16 @@ var datasound = {
         borderWidth: 1
     }]
 }
+var datalight = {
+    labels: ["0"],
+    datasets: [{
+        label: 'aantal lux',
+        data: [0],
+        
+        borderWidth: 1
+    }]
+} 
+
 var datatemperature = {
         labels: ["0"],
         datasets: [{
