@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var myChart = new Chart(myChart, {
         type: 'line',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["0min","30min", "1u", "1u30min", "2u", "2u30min",],
             datasets: [{
                 label: 'aantal ',
                 data: [12, 19, 3, 5, 2, 3],
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var myChart = new Chart(light, {
         type: 'line',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: ["0min","30min", "1u", "1u30min", "2u", "2u30min",],
             datasets: [{
                 label: 'aantal lux',
                 data: [12, 19, 3, 5, 2, 3],
