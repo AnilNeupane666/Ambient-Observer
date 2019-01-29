@@ -45,7 +45,7 @@ void loop() {
 //    Serial.print("temperature = ");
 //    Serial.println(temperature);
     Serial.println(String("[") + light + String("|") + ((temperature)) + String("#") +((sound))+ String ("]"));  
-    if (temperature >25 || sound > 400 || light <50 ){
+    if (temperature >25 || sound > 450 || light <50 ){
       digitalWrite(6, HIGH);
       delay(analogRead(0));
       digitalWrite(6, LOW);
