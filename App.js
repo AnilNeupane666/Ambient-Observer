@@ -38,17 +38,17 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.sound = data.sound
            datasound.datasets[0].data.push(data.sound)
-           datasound.labels.push('5')
+           datasound.labels.push('')
            chart.update()
            console.log(data.sound)
           }
           if(data.light !== undefined){
-            console.log(data)
+         
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           datalight.labels.push('5')
+           datalight.labels.push('')
            chart.update()
-           console.log(data.light)
+        
           }
       }
     }

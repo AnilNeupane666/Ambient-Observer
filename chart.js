@@ -20,7 +20,7 @@ var datalight = {
 var datatemperature = {
         labels: ["0"],
         datasets: [{
-            label: 'aantal °C',
+            label: ' °C',
             data: [0],
             
             borderWidth: 1
