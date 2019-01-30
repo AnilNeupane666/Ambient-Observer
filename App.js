@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           if (data.temperature >22 ){
+           if (data.temperature >23 ){
             this.$data.ambient.message1 ='Its getting hot';
            }
           else {
