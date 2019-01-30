@@ -8,7 +8,7 @@ let datasound = {
     }]
 }
 let datalight = {
-    labels: ["0"],
+    labels: ["0","1","2"],
     datasets: [{
         label: 'aantal lux',
         data: [0],
@@ -31,9 +31,8 @@ var charttemprature;
 var chartsound;
 var chartlight;
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    var temperature = document.getElementById("charttemperature").getContext('2d');
+    var temprature = document.getElementById("charttemprature").getContext('2d');
     
     charttemprature = new Chart(temprature, {
         type: 'line',
