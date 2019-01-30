@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(){
            console.log(data.sound)
           }
           if(data.light !== undefined){
-            console.log(data)
+         
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
            datalight.labels.push('')
