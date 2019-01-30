@@ -28,30 +28,19 @@
         <div class="row">
             <h3>Temperature</h3>
             <div class="row">
-                <div class="col s4">
+                <div class="col s4" id="colortemperature">
                     <h4><div class="large">{{ambient.temperature}} °C</div></h4>
                 </div>
                 
                 <div class="col s8" >
                     <canvas id="charttemprature" width="500px" height="160px" ></canvas>
                 </div>
-            </div>
-            <div id="demobox">
-                    .
-                   
-                     </div>
-                     <div>
-                          <script>
-                         document.getElementById("demobox").style.background-color = "blue";
-                         document.getElementById("demobox").style.border = "red";
-                          </script>
-                     </div>
-        
         </div>
+    </div>
         <div class="row">
             <h3>Sound</h3>
             <div class="row">
-                <div class="col s4">
+                <div class="col s4"id="colorsound">
                     <h4><div class="large">{{ambient.sound}}</div></h4>
                  </div>
                  <div class="col s8" >
@@ -62,7 +51,7 @@
             <div class="row">
                 <h3>Light</h3>
                     <div class="row">
-                        <div class="col s4">
+                        <div class="col s4" id="colorlight">
                             <h4><div class="large">{{ambient.light}} </div></h4>
                         </div>
                         <div class="col s8" >
