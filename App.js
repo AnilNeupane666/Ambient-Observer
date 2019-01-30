@@ -46,14 +46,12 @@ document.addEventListener("DOMContentLoaded",function(){
          
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           var x = 10
-           datalight.labels.push(x)
-           datalight.labels.pop(x-10)
-           
+           datalight.labels.push('')
            chartlight.update()
-           
+           console.log(data.light)
           }
       }
     }
   });
 });
+
