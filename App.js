@@ -75,8 +75,6 @@ document.addEventListener("DOMContentLoaded",function(){
               datasound.datasets[0].data.shift(data.temperature)
             }
            this.$data.ambient.sound = data.sound
-
-
            if (data.sound  >100 ){
             this.$data.ambient.message2 ='The room is not empty.';
            }
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded",function(){
            chartsound.update()
      
            if (datasound.datasets[0].data.slice(-1)[0] > 450){
-            document.getElementById("colorsound").style.background= "red"
+            document.getElementById("colorsound").style.background= "red";
           }
             if (datasound.datasets[0].data.slice(-1)[0] < 450){
               document.getElementById("colorsound").style.background= 'green';
@@ -100,12 +98,11 @@ document.addEventListener("DOMContentLoaded",function(){
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
            chartlight.update()
-      
-           if (datasound.datasets[0].data.slice(-1)[0] < 50){
-            document.getElementById("colorlight").style.background= "red"
+           if (datalight.datasets[0].data.slice(-1)[0] > 200){
+            document.getElementById("colorlight").style.background= "green";
           }
-            if (datasound.datasets[0].data.slice(-1)[0] > 50){
-              document.getElementById("colorlight").style.background= 'green';
+          if (datalight.datasets[0].data.slice(-1)[0] < 200){
+            document.getElementById("colorlight").style.background= "red";
           }
           }
           if (data.sound < 100 && data.light >100 ){
