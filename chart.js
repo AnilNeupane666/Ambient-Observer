@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     ticks: {
                         beginAtZero:true
                     }
-                }]
+                }],
             },
+
             responsive: false
         }
     });

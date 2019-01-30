@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded",function(){
           if(data.temperature !== undefined){
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           
+
+
+
            let total =0;
            datatemperature.datasets[0].data.forEach(value =>
              {
