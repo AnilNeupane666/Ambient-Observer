@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded",function(){
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
            datatemperature.labels.push('')
-           chart.update()
+           charttemprature.update()
            console.log(data.temperature)
           }
           if(data.sound !== undefined){
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded",function(){
            this.$data.ambient.sound = data.sound
            datasound.datasets[0].data.push(data.sound)
            datasound.labels.push('')
-           chart.update()
+           chartsound.update()
            console.log(data.sound)
           }
           if(data.light !== undefined){
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded",function(){
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
            datalight.labels.push('')
-           chart.update()
-        
+           chartlight.update()
+           console.log(data.light)
           }
       }
     }
