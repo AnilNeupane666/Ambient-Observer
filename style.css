@@ -3,6 +3,7 @@ table, th, td {
   border-collapse: collapse;
 }
 
-body {
-  background-color:rgb(251, 227, 209);
+#demobox { 
+  background-color: green;
+  border: red:
 }
