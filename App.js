@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded",function(){
            });
            
            this.$data.ambient.message5 = 'Average Temperature : '+(total/datatemperature.datasets[0].data.length).toPrecision(4); 
-           console.log( datatemperature.datasets[0].data);
+        
            
            if (data.temperature >25 ){
             this.$data.ambient.message1 ='It\'s getting warmer.';
@@ -108,18 +108,25 @@ document.addEventListener("DOMContentLoaded",function(){
               document.getElementById("colorlight").style.background= 'green';
           }
           }
-          if (data.sound < 100 && data.light >100 ){
+          
+          if (this.$data.ambient.sound < 100 && this.$data.ambient.light >100 ){
             this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights.';
+           
            }
+           
           else {
             this.$data.ambient.message3 =null;
           }
-          if (data.sound < 400 && data.light >100 && data.temperature <22 ){
+          console.log( this.$data.ambient.temperature);
+          if (this.$data.ambient.sound < 400 && this.$data.ambient.light >100 &&  this.$data.ambient.temperature <22){
+          if(this.$data.ambient.temperature > 18)
+          {
             this.$data.ambient.message4 ='The room is in perfect condition with the right amount of humidity, CO2 level and temperature. ';
-           }
+           }}
           else {
-            this.$data.ambient.message4 =null;
+            this.$data.ambient.message4 ='The room is not in perfect condition.';
           }
+        
       }
     }
   });
