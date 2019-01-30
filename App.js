@@ -46,8 +46,10 @@ document.addEventListener("DOMContentLoaded",function(){
          
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           datalight.labels.push('')
-           datalight.labels.pop('');
+           var x = 10
+           datalight.labels.push(x)
+           datalight.labels.pop(x-10)
+           
            chartlight.update()
            
           }
