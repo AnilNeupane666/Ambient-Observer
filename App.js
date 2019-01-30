@@ -30,24 +30,24 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           datatemperature.labels.push('5')
-           chart.update()
+           datatemperature.labels.push('')
+           charttemprature.update()
            console.log(data.temperature)
           }
           if(data.sound !== undefined){
             console.log(data)
            this.$data.ambient.sound = data.sound
            datasound.datasets[0].data.push(data.sound)
-           datasound.labels.push('5')
-           chart.update()
+           datasound.labels.push('')
+           chartsound.update()
            console.log(data.sound)
           }
           if(data.light !== undefined){
             console.log(data)
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           datalight.labels.push('5')
-           chart.update()
+           datalight.labels.push('')
+           chartlight.update()
            console.log(data.light)
           }
       }

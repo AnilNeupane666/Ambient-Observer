@@ -1,4 +1,4 @@
-var datasound = {
+let datasound = {
     labels: ["0"],
     datasets: [{
         label: 'aantal ',
@@ -7,7 +7,7 @@ var datasound = {
         borderWidth: 1
     }]
 }
-var datalight = {
+let datalight = {
     labels: ["0"],
     datasets: [{
         label: 'aantal lux',
@@ -17,7 +17,7 @@ var datalight = {
     }]
 } 
 
-var datatemperature = {
+let datatemperature = {
         labels: ["0"],
         datasets: [{
             label: 'aantal °C',
@@ -26,10 +26,16 @@ var datatemperature = {
             borderWidth: 1
         }]
     }
+
+var charttemprature;
+var chartsound;
+var chartlight;
+
+
 document.addEventListener('DOMContentLoaded', () => {
     var temprature = document.getElementById("charttemprature").getContext('2d');
     
-    chart = new Chart(temprature, {
+    charttemprature = new Chart(temprature, {
         type: 'line',
         data: datatemperature,
         options: {
@@ -48,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     var myChart = document.getElementById("chartsound").getContext('2d');
     
-    var myChart = new Chart(myChart, {
+    chartsound = new Chart(myChart, {
         type: 'line',
         data: datasound,
         options: {
@@ -66,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     var light = document.getElementById("chartlight").getContext('2d');
     
-    chart = new Chart(light, {
+    chartlight= new Chart(light, {
         type: 'line',
         data: datalight,
         options: {
