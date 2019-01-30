@@ -1,5 +1,5 @@
 let datasound = {
-    labels: ["0"],
+    labels: ["0","","","","","","","","",""],
     datasets: [{
         label: ' ',
         data: [0],
@@ -8,7 +8,7 @@ let datasound = {
     }]
 }
 let datalight = {
-    labels: ["0"],
+    labels: ["0","","","","","","","","",""],
     datasets: [{
         data: [0],
         label: ' ',
@@ -18,7 +18,7 @@ let datalight = {
 } 
 
 let datatemperature = {
-        labels: ["0"],
+        labels: ["0","","","","","","","","",""],
         datasets: [{
             label: ' °C',
             data: [0],
@@ -27,19 +27,19 @@ let datatemperature = {
         }]
     }
     let datahuminity = {
-        labels: ["0,","2","4","6","8","10"],
+        labels:["0","","","","","","","","",""],
         datasets: [{
             label: ' ',
-            data: [2,6,5,4,8,6],
+            data: [2,6,5,4,8,6,11,5,8,9],
             
             borderWidth: 1
         }]
     }
     let dataco2 = {
-        labels: ["0,","2","4","6","8","10"],
+        labels: ["0","","","","","","","","",""],
         datasets: [{
             label: ' ',
-            data: [11,5,8,9,4,6],
+            data: [11,5,8,9,4,6,2,6,5,4],
             
             borderWidth: 1
         }]

@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded",function(){
         message1: null,
         message2: null,
         message3: null,
-        message4: null
+        message4: null,
+        message5:null
       }, 
           // some weather information, but we do not have any values yet
     },
@@ -32,10 +33,23 @@ document.addEventListener("DOMContentLoaded",function(){
         let data = JSON.parse(json)       // parse the JSON format to an object
         this.$data.Ambient = data         // 
           if(data.temperature !== undefined){
-            console.log(data)
+            if(datatemperature.datasets[0].data.length > 10){
+              datatemperature.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           if (data.temperature >24 ){
+           let total =0;
+           datatemperature.datasets[0].data.forEach(value =>
+             {
+             total+=value;
+          
+
+           });
+           
+           this.$data.ambient.message5 = 'Average Temperature : '+(total/datatemperature.datasets[0].data.length).toPrecision(4); 
+           console.log( datatemperature.datasets[0].data);
+           
+           if (data.temperature >25 ){
             this.$data.ambient.message1 ='Its getting hot';
            }
           else {
@@ -43,18 +57,20 @@ document.addEventListener("DOMContentLoaded",function(){
           }
 
      
-           datatemperature.labels.push('')
+           
            charttemprature.update()
-           console.log(data.temperature)
-           if (datatemperature.datasets[0].data.slice(-1)[0] > 24){
+           
+           if (datatemperature.datasets[0].data.slice(-1)[0] > 25){
             document.getElementById("colortemperature").style.background= "red"
           }
-            if (datatemperature.datasets[0].data.slice(-1)[0] < 24){
+            if (datatemperature.datasets[0].data.slice(-1)[0] < 25){
               document.getElementById("colortemperature").style.background= 'green';
           }
           }
           if(data.sound !== undefined){
-          
+            if(datasound.datasets[0].data.length > 10){
+              datasound.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.sound = data.sound
 
 
@@ -65,9 +81,8 @@ document.addEventListener("DOMContentLoaded",function(){
             this.$data.ambient.message2 =null;
           }
            datasound.datasets[0].data.push(data.sound)
-           datasound.labels.push('')
            chartsound.update()
-           console.log(data.sound)
+     
            if (datasound.datasets[0].data.slice(-1)[0] > 450){
             document.getElementById("colorsound").style.background= "red"
           }
@@ -76,12 +91,13 @@ document.addEventListener("DOMContentLoaded",function(){
           }
           }
           if(data.light !== undefined){
-         
+            if(datalight.datasets[0].data.length > 10){
+              datalight.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           datalight.labels.push('')
            chartlight.update()
-           console.log(data.light)
+      
            if (datasound.datasets[0].data.slice(-1)[0] < 50){
             document.getElementById("colorlight").style.background= "red"
           }
