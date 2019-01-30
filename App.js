@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded",function(){
           if(data.temperature !== undefined){
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
+           
            let total =0;
            datatemperature.datasets[0].data.forEach(value =>
              {
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded",function(){
            console.log( datatemperature.datasets[0].data);
            
            if (data.temperature >25 ){
-            this.$data.ambient.message1 ='Its getting hot';
+            this.$data.ambient.message1 ='It\'s getting warmer.';
            }
           else {
             this.$data.ambient.message1 =null;
