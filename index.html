@@ -25,6 +25,7 @@
 <body class = "container  indigo lighten-5 ">
     <div class="container" id="app">
             <h3> Arduino Grove Sensors</h3>
+            <h3><div class="red">{{ambient.message4}} </div></h3>
         <div class="row">
             <h3>Temperature</h3>
             <div class="row">
@@ -50,7 +51,7 @@
                      </div> -->
         
         </div>
-        <h3><div class="white">{{ambient.message3}} </div></h3>
+        <h3><div class="grey">{{ambient.message3}} </div></h3>
         <div class="row">
             <h3>Sound</h3>
             <div class="row">
@@ -61,7 +62,7 @@
                     <canvas id="chartsound" width="500px" height="160px" ></canvas>
              </div>
             </div>
-            <h3><div class="white">{{ambient.message2}} </div></h3>
+            <h3><div class=" indigo lighten-5">{{ambient.message2}} </div></h3>
         </div>
             <div class="row">
                 <h3>Light</h3>
@@ -78,7 +79,7 @@
             <h3>CO<sub>2</sub></h3>
                 <div class="row">
                     <div class="col s4">
-                        <h4><div class="large">{{ambient.co2}} </div> sensor offline</h4>
+                        <h5><div class="large">{{ambient.co2}} </div> sensor offline</h5>
                     </div>
                     <div class="col s8" >
                         <canvas id="chartco2" width="500px" height="160px" ></canvas>
@@ -89,13 +90,26 @@
         <h3>humidity</h3>
             <div class="row">
                 <div class="col s4">
-                    <h4><div class="large">{{ambient.humidity}} </div> sensor offline</h4>
+                    <h5><div class="large">{{ambient.humidity}} </div> sensor offline</h5>
                 </div>
                 <div class="col s8" >
                     <canvas id="charthumidity" width="500px" height="160px" ></canvas>
                 </div>
             </div>
         </div>
+
+     
     </div>
+    <div class="">
+            <h4>Usage:
+                 <p>
+                     CO2 and Humidity sensors were unavailable which made it harder to complete the experiment.
+                    When all the sensors are online, the combinations of these sensors could be used for multple occasions varying from securitysystems, research on different effects of crowded rooms on the CO2 level or even the temperature.
+                    This system can be used to generate automated SOS message,depending on the data recieved.It could help with evacuating earlier or notifying people in the building  when the temperature goes high suddenly.The fields this systems could be applied too are infinite. The right sensor with correct accuracy plays a vital role.
+
+                </p> 
+ 
+              </h4>
+     </div> 
 </body>
 </html>

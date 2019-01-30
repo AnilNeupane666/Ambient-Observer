@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded",function(){
         light: null,
         message1: null,
         message2: null,
-        message3: null
+        message3: null,
+        message4: null
       }, 
           // some weather information, but we do not have any values yet
     },
@@ -52,7 +53,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
            if (data.sound  >100 ){
-            this.$data.ambient.message2 ='The room is not empty';
+            this.$data.ambient.message2 ='The room is not empty.';
            }
           else {
             this.$data.ambient.message2 =null;
@@ -71,10 +72,16 @@ document.addEventListener("DOMContentLoaded",function(){
            console.log(data.light)
           }
           if (data.sound < 100 && data.light >100 ){
-            this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights';
+            this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights.';
            }
           else {
             this.$data.ambient.message3 =null;
+          }
+          if (data.sound < 400 && data.light >100 && data.temperature <22 ){
+            this.$data.ambient.message4 ='The room is in perfect condition with the right amount of humidity, CO2 level and temperature. ';
+           }
+          else {
+            this.$data.ambient.message4 =null;
           }
       }
     }
