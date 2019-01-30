@@ -27,9 +27,9 @@ var datatemperature = {
         }]
     }
 document.addEventListener('DOMContentLoaded', () => {
-    var temprature = document.getElementById("charttemprature").getContext('2d');
+    var temperature = document.getElementById("charttemperature").getContext('2d');
     
-    chart = new Chart(temprature, {
+    chart = new Chart(temperature, {
         type: 'line',
         data: datatemperature,
         options: {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     var myChart = document.getElementById("chartsound").getContext('2d');
     
-    var myChart = new Chart(myChart, {
+    mychart = new Chart(myChart, {
         type: 'line',
         data: datasound,
         options: {

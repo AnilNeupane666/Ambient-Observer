@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           datatemperature.labels.push('5')
+           datatemperature.labels.push('')
            chart.update()
            console.log(data.temperature)
           }

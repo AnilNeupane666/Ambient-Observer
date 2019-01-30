@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="style.css">     
         <link rel="shortcut icon" type="image/png" href="/icon.png"/>                    
 </head>
-<body class = "container">
+<body class = "container grey lighten-5">
     <div class="container" id="app">
             <h3>Measurements of  Arduino Grove Sensors</h3><br>
         <div class="row">
@@ -33,9 +33,21 @@
                     <h2><div class="large">{{ambient.temperature}} °C</div></h2>
                 </div>
                 <div class="col s8" >
-                    <canvas id="charttemprature" width="400px" height="200px" ></canvas>
+                    <canvas id="charttemperature" width="400px" height="200px" ></canvas>
                 </div>
             </div>
+            <div id="demobox">
+               .
+              
+                </div>
+                <div>
+                     <script>
+                    document.getElementById("demobox").style.background-color = "blue";
+                    document.getElementById("demobox").style.border = "red";
+                     </script>
+                </div>
+               
+               
         </div>
         <div class="row">
             <h3>Sound</h3>
