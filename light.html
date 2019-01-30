@@ -1,38 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Light Sensor</title>
+    <title>Tempearture Sensor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src=https://cdn.jsdelivr.net/npm/vue-mqtt@2.0.3/dist/build.min.js> </script> <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    
+
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="App.js"></script>
-    <script src="chart.js"></script>  
-    <link rel="stylesheet" href="style.css">     
-    <link rel="shortcut icon" type="image/png" href="/icon.png"/>
+    <script src="chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
 </head>
-<body   class = "container  indigo lighten-5" >
-        <nav>
-                <div class="nav-wrapper">
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="temperature.html">Temperature Sensor</a></li>
-                        <li><a href="sound.html">Sound Sensor</a></li>
-                        <li><a href="light.html">Light Sensor</a></li>
-                        <li><a href="usage.html">Usage</a></li>
-                        <li><a href="allcode.html">All code</a></li>
-                    </ul>
-                </div>
-        </nav>
+
+<body class="container  indigo lighten-5">
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="temperature.html">Temperature Sensor</a></li>
+                <li><a href="sound.html">Sound Sensor</a></li>
+                <li><a href="light.html">Light Sensor</a></li>
+                <li><a href="usage.html">USage</a></li>
+                <li><a href="allcode.html">All code</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1>Grove Light Sensor</h1>
+        <p>The Grove - Light sensor integrates a photo-resistor(light dependent resistor) to detect the intensity of light. The resistance of photo-resistor decreases when the intensity of light increases. A dual OpAmp chip LM358 on board produces voltage corresponding to intensity of light(i.e. based on resistance value). The output signal is analog value, the brighter the light is, the larger the value.
+
+                This module can be used to build a light controlled switch i.e. switch off lights during day time and switch on lights during night time.</p>
+    
+
+    <img src="https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/cover.jpg" alt="">
+    
+    <pre>
+        <xmp>#include <math.h>
+
+                #include <Grove_LED_Bar.h>
+
+                       
+                        
+                        void setup()
+                        {
+                          // nothing to initialize
+                          bar.begin();
+                          bar.setGreenToRed(true);
+                        }
+                        
+                        void loop()
+                        {
+                        
+                          int value = analogRead(A0);
+                          value = map(value, 0, 800, 0, 10);
+                        
+                          bar.setLevel(value);
+                          delay(100);
+                        } </xmp>
+    </pre>
+
+
+
 </body>
+
 </html>
