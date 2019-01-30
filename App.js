@@ -15,8 +15,13 @@ document.addEventListener("DOMContentLoaded",function(){
       ambient: {
         temperature: null,
         sound: null,
-        light: null
-      }       // some weather information, but we do not have any values yet
+        light: null,
+        message1: null,
+        message2: null,
+        message3: null,
+        message4: null
+      }, 
+          // some weather information, but we do not have any values yet
     },
     mounted () {
       this.$mqtt.subscribe(topic)       // subscribe to the information topic on MQTT
@@ -30,6 +35,14 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
+           if (data.temperature >22 ){
+            this.$data.ambient.message1 ='Its getting hot';
+           }
+          else {
+            this.$data.ambient.message1 =null;
+          }
+
+     
            datatemperature.labels.push('')
            charttemprature.update()
            console.log(data.temperature)
@@ -41,8 +54,16 @@ document.addEventListener("DOMContentLoaded",function(){
           }
           }
           if(data.sound !== undefined){
-            console.log(data)
+          
            this.$data.ambient.sound = data.sound
+
+
+           if (data.sound  >100 ){
+            this.$data.ambient.message2 ='The room is not empty.';
+           }
+          else {
+            this.$data.ambient.message2 =null;
+          }
            datasound.datasets[0].data.push(data.sound)
            datasound.labels.push('')
            chartsound.update()
@@ -67,6 +88,18 @@ document.addEventListener("DOMContentLoaded",function(){
             if (datasound.datasets[0].data.slice(-1)[0] > 50){
               document.getElementById("colorlight").style.background= 'green';
           }
+          }
+          if (data.sound < 100 && data.light >100 ){
+            this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights.';
+           }
+          else {
+            this.$data.ambient.message3 =null;
+          }
+          if (data.sound < 400 && data.light >100 && data.temperature <22 ){
+            this.$data.ambient.message4 ='The room is in perfect condition with the right amount of humidity, CO2 level and temperature. ';
+           }
+          else {
+            this.$data.ambient.message4 =null;
           }
       }
     }
