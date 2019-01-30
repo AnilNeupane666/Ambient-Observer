@@ -33,5 +33,37 @@
                     </ul>
                 </div>
         </nav>
-</body>
+
+        <h1>Grove-Sound Sensor</h1>
+        <p>Grove - Sound Sensor can detect the sound intensity of the environment. The main component of the module is a simple microphone, which is based on the LM386 amplifier and an electret microphone. This module's output is analog and can be easily sampled and tested by a Seeeduino.</p>
+        <h2>Arduino code</h2>
+        <pre>
+            <xmp>
+                    // test code for Grove - Sound Sensor
+                    // loovee @ 2016-8-30
+                    
+                    const int pinAdc = A0;
+                    
+                    void setup()
+                    {
+                        Serial.begin(115200);
+                        //Serial.println("Grove - Sound Sensor Test...");
+                    }
+                    
+                    void loop()
+                    {
+                        long sum = 0;
+                        for(int i=0; i<32; i++)
+                        {
+                            sum += analogRead(pinAdc);
+                        }
+                    
+                        sum >>= 5;
+                    
+                        Serial.println(sum);
+                        delay(10);
+                    }
+            </xmp>
+        </pre>
+    </body>
 </html>
