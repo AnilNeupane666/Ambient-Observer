@@ -1,7 +1,7 @@
 let datasound = {
     labels: ["0"],
     datasets: [{
-        label: 'aantal ',
+        label: ' ',
         data: [0],
         
         borderWidth: 1
@@ -10,8 +10,8 @@ let datasound = {
 let datalight = {
     labels: ["0"],
     datasets: [{
-        label: 'aantal lux',
         data: [0],
+        label: ' ',
         
         borderWidth: 1
     }]
@@ -22,14 +22,33 @@ let datatemperature = {
         datasets: [{
             label: ' °C',
             data: [0],
+            label: ' ',
+            borderWidth: 1
+        }]
+    }
+    let datahuminity = {
+        labels: ["0,","2","4","6","8","10"],
+        datasets: [{
+            label: ' ',
+            data: [2,6,5,4,8,6],
             
             borderWidth: 1
         }]
     }
-
+    let dataco2 = {
+        labels: ["0,","2","4","6","8","10"],
+        datasets: [{
+            label: ' ',
+            data: [11,5,8,9,4,6],
+            
+            borderWidth: 1
+        }]
+    }
 var charttemprature;
 var chartsound;
 var chartlight;
+var charthuminity
+var chartco2
 
 document.addEventListener('DOMContentLoaded', () => {
     var temprature = document.getElementById("charttemprature").getContext('2d');
@@ -74,6 +93,43 @@ document.addEventListener('DOMContentLoaded', () => {
     chartlight= new Chart(light, {
         type: 'line',
         data: datalight,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            responsive: false
+        }
+    });
+})
+document.addEventListener('DOMContentLoaded', () => {
+    var co2 = document.getElementById("chartco2").getContext('2d');
+    
+    chartco2 = new Chart(co2, {
+        type: 'line',
+        data: dataco2,
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    }
+                }]
+            },
+            responsive: false
+        }
+    });
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    var huminity = document.getElementById("charthuminity").getContext('2d');
+    
+    charthuminity = new Chart(huminity, {
+        type: 'line',
+        data: datahuminity,
         options: {
             scales: {
                 yAxes: [{
