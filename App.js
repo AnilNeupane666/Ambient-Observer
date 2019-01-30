@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded",function(){
             console.log(data)
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
-           if (data.temperature >22 ){
+           if (data.temperature >24 ){
             this.$data.ambient.message1 ='Its getting hot';
            }
           else {
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded",function(){
            datatemperature.labels.push('')
            charttemprature.update()
            console.log(data.temperature)
-           if (datatemperature.datasets[0].data.slice(-1)[0] > 23){
+           if (datatemperature.datasets[0].data.slice(-1)[0] > 24){
             document.getElementById("colortemperature").style.background= "red"
           }
-            if (datatemperature.datasets[0].data.slice(-1)[0] < 23){
+            if (datatemperature.datasets[0].data.slice(-1)[0] < 24){
               document.getElementById("colortemperature").style.background= 'green';
           }
           }
