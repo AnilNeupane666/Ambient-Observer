@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded",function(){
         let data = JSON.parse(json)       // parse the JSON format to an object
         this.$data.Ambient = data         // 
           if(data.temperature !== undefined){
+            if(datatemperature.datasets[0].data.length > 10){
+              datatemperature.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.temperature = data.temperature
            datatemperature.datasets[0].data.push(data.temperature)
 
@@ -57,7 +60,7 @@ document.addEventListener("DOMContentLoaded",function(){
           }
 
      
-           datatemperature.labels.push('')
+           
            charttemprature.update()
            
            if (datatemperature.datasets[0].data.slice(-1)[0] > 25){
@@ -68,7 +71,9 @@ document.addEventListener("DOMContentLoaded",function(){
           }
           }
           if(data.sound !== undefined){
-          
+            if(datasound.datasets[0].data.length > 10){
+              datasound.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.sound = data.sound
 
 
@@ -79,7 +84,6 @@ document.addEventListener("DOMContentLoaded",function(){
             this.$data.ambient.message2 =null;
           }
            datasound.datasets[0].data.push(data.sound)
-           datasound.labels.push('')
            chartsound.update()
      
            if (datasound.datasets[0].data.slice(-1)[0] > 450){
@@ -90,10 +94,11 @@ document.addEventListener("DOMContentLoaded",function(){
           }
           }
           if(data.light !== undefined){
-         
+            if(datalight.datasets[0].data.length > 10){
+              datalight.datasets[0].data.shift(data.temperature)
+            }
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           datalight.labels.push('')
            chartlight.update()
       
            if (datasound.datasets[0].data.slice(-1)[0] < 50){
