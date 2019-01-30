@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded",function(){
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
            chartlight.update()
-           if (datalight.datasets[0].data.slice(-1)[0] > 200){
+           if (datalight.datasets[0].data.slice(-1)[0] > 50){
             document.getElementById("colorlight").style.background= "green";
           }
-          if (datalight.datasets[0].data.slice(-1)[0] < 200){
+          if (datalight.datasets[0].data.slice(-1)[0] < 50){
             document.getElementById("colorlight").style.background= "red";
           }
           }
