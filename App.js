@@ -66,12 +66,9 @@ document.addEventListener("DOMContentLoaded",function(){
          
            this.$data.ambient.light = data.light
            datalight.datasets[0].data.push(data.light)
-           var x = 10
-           datalight.labels.push(x)
-           datalight.labels.pop(x-10)
-           
+           datalight.labels.push('')
            chartlight.update()
-           
+           console.log(data.light)
           }
           if (data.sound < 100 && data.light >100 ){
             this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights';
@@ -83,3 +80,4 @@ document.addEventListener("DOMContentLoaded",function(){
     }
   });
 });
+
