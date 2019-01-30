@@ -45,7 +45,13 @@ document.addEventListener("DOMContentLoaded",function(){
      
            datatemperature.labels.push('')
            charttemprature.update()
-          
+           console.log(data.temperature)
+           if (datatemperature.datasets[0].data.slice(-1)[0] > 23){
+            document.getElementById("colortemperature").style.background= "red"
+          }
+            if (datatemperature.datasets[0].data.slice(-1)[0] < 23){
+              document.getElementById("colortemperature").style.background= 'green';
+          }
           }
           if(data.sound !== undefined){
           
@@ -61,7 +67,13 @@ document.addEventListener("DOMContentLoaded",function(){
            datasound.datasets[0].data.push(data.sound)
            datasound.labels.push('')
            chartsound.update()
-           
+           console.log(data.sound)
+           if (datasound.datasets[0].data.slice(-1)[0] > 450){
+            document.getElementById("colorsound").style.background= "red"
+          }
+            if (datasound.datasets[0].data.slice(-1)[0] < 450){
+              document.getElementById("colorsound").style.background= 'green';
+          }
           }
           if(data.light !== undefined){
          
@@ -70,6 +82,12 @@ document.addEventListener("DOMContentLoaded",function(){
            datalight.labels.push('')
            chartlight.update()
            console.log(data.light)
+           if (datasound.datasets[0].data.slice(-1)[0] < 50){
+            document.getElementById("colorlight").style.background= "red"
+          }
+            if (datasound.datasets[0].data.slice(-1)[0] > 50){
+              document.getElementById("colorlight").style.background= 'green';
+          }
           }
           if (data.sound < 100 && data.light >100 ){
             this.$data.ambient.message3 ='The room is empty but the lights are on.Please turn off the lights.';
